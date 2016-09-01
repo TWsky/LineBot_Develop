@@ -1,0 +1,39 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "LineBot api for Bot demo",
+    "description": "A API based on Swagger and built using Node.js"
+	},
+	"host": "localhost",
+	"schemes": ["http", "https"],
+  "basePath": "/",
+	"paths": {
+		"/botMsg": {
+			"post": {
+				"tags": ["LineBot"],
+				"operationId": "msg_recieve",
+				"consumes": ["application/json"],
+				"produces": ["application/json","text/json"],
+				"parameters": [
+					{
+					"name": "X-LINE-ChannelSignature",
+					"in": "header",
+					"description": "Recieve Bot server POST needed header",
+					"type": "string",
+					"required": true
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success"
+					},
+					"407": {
+						"description": "Unable to process the contents of the received request."
+					}
+				},
+				"deprecated": false
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "linebot-dev",
+  "description": "",
+  "version": "0.1.0",
+  "author": "Azure <b00705046@ntu.edu.tw>",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TWsky/linebot-dev.git"
+  },
+  "bugs": "http://github.com/TWsky/linebot-dev/issues",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": "5.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "express": "^4.0.0",
+    "jsonpath": "^0.2.2",
+    "request-promise": "^3.0.0",
+    "swaggerize-express": "^4.0.0",
+    "swaggerize-ui": "^1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^3.0.0",
+    "js-yaml": "^3.2.6",
+    "jshint": "^2.4.1",
+    "istanbul": "~0.2.3",
+    "enjoi": "^1.0.2",
+    "supertest": "~0.13.0"
+  },
+  "scripts": {
+    "lint": "jshint -c .jshintrc --exclude ./node_modules .",
+    "regenerate": "yo swaggerize --only=handlers,models,tests --framework express --apiPath config/api.json"
+  },
+  "main": "./server"
+}
